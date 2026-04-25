@@ -16,7 +16,12 @@ public class Router {
 
     public static void goToVigenere() {
         try {
+<<<<<<< HEAD
             URL url = Router.class.getResource("/com/example/UI/Vigenere/Vigenere.fxml");
+=======
+            var url = Router.class.getResource("/com/example/UI/Vigenere/Vigenere.fxml");
+            System.out.println("RUTA: " + url);
+>>>>>>> 6e5b1c2 (feat: implementar cifrado cesar)
             FXMLLoader loader = new FXMLLoader(url);
             Scene scene = new Scene(loader.load(), 500, 400);
 
@@ -44,9 +49,17 @@ public class Router {
         }
     }
 
+<<<<<<< HEAD
     public static void goToCesar() {
         try {
             URL url = Router.class.getResource("/com/example/UI/Cesar/Cesar.fxml");
+=======
+    // ✅ MÉTODO CESAR (este te faltaba)
+    public static void goToCesar() {
+        try {
+            var url = Router.class.getResource("/com/example/UI/Cesar/Cesar.fxml");
+            System.out.println("RUTA: " + url);
+>>>>>>> 6e5b1c2 (feat: implementar cifrado cesar)
             FXMLLoader loader = new FXMLLoader(url);
             Scene scene = new Scene(loader.load(), 780, 620);
 
