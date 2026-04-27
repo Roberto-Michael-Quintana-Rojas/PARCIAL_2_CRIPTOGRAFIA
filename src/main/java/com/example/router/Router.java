@@ -27,4 +27,18 @@ public class Router {
             e.printStackTrace();
         }
     }
+
+    public static void goToPigPen() {
+    try {
+        var url = Router.class.getResource("/com/example/UI/PigPen/PigPen.fxml");
+        System.out.println("RUTA: " + url);
+
+        FXMLLoader loader = new FXMLLoader(url);
+        Scene scene = new Scene(loader.load(), 645, 520);
+        stage.setScene(scene);
+        stage.setTitle("🔐 Cifrado Pigpen");
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 }
