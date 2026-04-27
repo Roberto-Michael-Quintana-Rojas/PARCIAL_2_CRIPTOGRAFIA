@@ -3,6 +3,7 @@ module com.example {
     requires javafx.fxml;
 
     opens com.example.UI.Vigenere to javafx.fxml;
+    opens com.example.UI.PigPen to javafx.fxml;
 
     //aqui agregar sus propios controladores de cada cifrado compañeres
 
