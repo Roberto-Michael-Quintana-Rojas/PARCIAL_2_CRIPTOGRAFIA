@@ -5,7 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane xmlns:fx="http://javafx.com/fxml"
+<ScrollPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.UI.Cesar.CesarController"
             fitToWidth="true"
             prefWidth="720"
@@ -73,7 +74,6 @@
                                prefHeight="36"/>
 
                     <HBox spacing="15">
-
                         <Button text="🔒 Cifrar"
                                 onAction="#handleEncrypt"
                                 prefWidth="315"
@@ -83,7 +83,6 @@
                                 onAction="#handleDecrypt"
                                 prefWidth="315"
                                 prefHeight="40"/>
-
                     </HBox>
 
                     <Label text="Resultado:"/>
@@ -92,7 +91,6 @@
                               promptText="Aquí aparecerá el resultado"
                               prefHeight="120"
                               wrapText="true"/>
-
                 </VBox>
             </center>
 
@@ -100,7 +98,21 @@
                 <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
 
+            <bottom>
+                <HBox alignment="CENTER" spacing="10" style="-fx-padding: 15;">
+                    <Button text="Menú Principal" 
+                            onAction="#goBackToMainMenu"
+                            prefWidth="200"
+                            prefHeight="45"
+                            style="-fx-background-color: #77bafc; 
+                       -fx-text-fill: white; 
+                       -fx-font-size: 14px; 
+                       -fx-font-weight: bold; 
+                       -fx-background-radius: 5; 
+                       -fx-cursor: hand;"/>
+                </HBox>
+            </bottom>
+
         </BorderPane>
     </content>
-
 </ScrollPane>

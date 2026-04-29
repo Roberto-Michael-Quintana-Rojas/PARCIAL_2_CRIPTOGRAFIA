@@ -13,7 +13,7 @@ public class PrincipalController {
 
   @FXML
   private void goToCesar() {
-    //Router.goToCesar();
+    Router.goToCesar();
   }
 
   @FXML
@@ -33,6 +33,6 @@ public class PrincipalController {
 
   @FXML
   private void goToAES() {
-    //Router.goToAES();
+    Router.goToAES();
   }
 }

@@ -1,6 +1,8 @@
 package com.example.UI.Cesar;
 
 import com.example.cipher.Cesar.CesarCipher;
+import com.example.router.Router;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -104,5 +106,10 @@ public class CesarController {
         }
 
         return true;
+    }
+
+    @FXML
+    private void goBackToMainMenu() {
+        Router.goToMainMenu();
     }
 }
