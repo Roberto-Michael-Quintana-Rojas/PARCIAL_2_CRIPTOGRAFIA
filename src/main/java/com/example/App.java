@@ -12,6 +12,7 @@ public class App extends Application {
 
         // Abre directamente Vigenere (puedes cambiar luego)
         Router.goToPigPen();
+        
         stage.setTitle("Cifrados");
         stage.show();
     }
