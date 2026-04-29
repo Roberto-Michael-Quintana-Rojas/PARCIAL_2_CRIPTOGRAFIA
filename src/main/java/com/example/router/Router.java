@@ -41,4 +41,18 @@ public class Router {
         e.printStackTrace();
     }
 }
+
+    public static void goToRailFence() {
+        try {
+            var url = Router.class.getResource("/com/example/UI/RailFence/RailFence.fxml");
+            System.out.println("RUTA: " + url);
+
+            FXMLLoader loader = new FXMLLoader(url);
+            Scene scene = new Scene(loader.load(), 560, 460);
+            stage.setScene(scene);
+            stage.setTitle("Cifrado Rail Fence");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
