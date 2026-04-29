@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.UI.Cesar.CesarController"
+            fitToWidth="true"
+            prefWidth="720"
+            prefHeight="520">
+
+    <content>
+        <BorderPane prefWidth="720"
+                    prefHeight="520"
+                    style="-fx-background-color: #f4f6f8;">
+
+            <center>
+                <VBox spacing="14"
+                      style="-fx-background-color: white;
+                             -fx-border-color: #d0d0d0;
+                             -fx-border-radius: 10;
+                             -fx-background-radius: 10;">
+
+                    <padding>
+                        <Insets top="25" right="30" bottom="25" left="30"/>
+                    </padding>
+
+                    <Label text="Cifrado César"
+                           style="-fx-font-weight: bold;">
+                        <font>
+                            <Font size="26"/>
+                        </font>
+                    </Label>
+
+                    <Label text="Texto a procesar:"/>
+
+                    <TextField fx:id="inputText"
+                               promptText="Ejemplo: HOLA ERIKA"
+                               prefHeight="36"/>
+
+                    <Label text="Seleccione el tipo de cifrado César:"/>
+
+                    <VBox spacing="10"
+                          style="-fx-border-color: #cccccc;
+                                 -fx-padding: 12;
+                                 -fx-background-color: #fafafa;">
+
+                        <fx:define>
+                            <ToggleGroup fx:id="grupoCesar"/>
+                        </fx:define>
+
+                        <RadioButton fx:id="normalRadio"
+                                     text="César normal (desplazamiento 3)"
+                                     selected="true"
+                                     toggleGroup="$grupoCesar"/>
+
+                        <RadioButton fx:id="posicionesRadio"
+                                     text="César con posiciones (N)"
+                                     toggleGroup="$grupoCesar"/>
+
+                        <RadioButton fx:id="claveRadio"
+                                     text="César con clave (palabra)"
+                                     toggleGroup="$grupoCesar"/>
+
+                    </VBox>
+
+                    <Label text="Clave / posición:"/>
+
+                    <TextField fx:id="keyText"
+                               promptText="Para posiciones escriba número, para clave escriba palabra"
+                               prefHeight="36"/>
+
+                    <HBox spacing="15">
+
+                        <Button text="🔒 Cifrar"
+                                onAction="#handleEncrypt"
+                                prefWidth="315"
+                                prefHeight="40"/>
+
+                        <Button text="🔓 Descifrar"
+                                onAction="#handleDecrypt"
+                                prefWidth="315"
+                                prefHeight="40"/>
+
+                    </HBox>
+
+                    <Label text="Resultado:"/>
+
+                    <TextArea fx:id="resultText"
+                              promptText="Aquí aparecerá el resultado"
+                              prefHeight="120"
+                              wrapText="true"/>
+
+                </VBox>
+            </center>
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+        </BorderPane>
+    </content>
+
+</ScrollPane>

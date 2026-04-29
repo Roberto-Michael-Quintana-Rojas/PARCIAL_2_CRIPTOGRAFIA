@@ -13,8 +13,9 @@ public class App extends Application {
         // Abre directamente Vigenere (puedes cambiar luego)
         //Router.goToPigPen();
         //Router.goToRailFence();
-        Router.goToAES();
+        //Router.goToAES();
         //Router.goToVigenere();
+        Router.goToCesar();
         stage.setTitle("Cifrados");
         stage.show();
     }
