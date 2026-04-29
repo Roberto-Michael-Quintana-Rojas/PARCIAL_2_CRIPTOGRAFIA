@@ -56,4 +56,17 @@ public class Router {
             e.printStackTrace();
         }
     }
+
+    public static void goToAES() {
+    try {
+        var url = Router.class.getResource("/com/example/UI/AES/AES.fxml");
+        System.out.println("RUTA: " + url);
+        FXMLLoader loader = new FXMLLoader(url);
+        Scene scene = new Scene(loader.load(), 500, 380);
+        stage.setScene(scene);
+        stage.setTitle("Cifrado AES-128");
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 }

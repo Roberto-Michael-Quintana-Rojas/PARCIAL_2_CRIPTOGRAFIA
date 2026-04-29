@@ -7,29 +7,29 @@
 
 <VBox xmlns="http://javafx.com/javafx/11"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.UI.Vigenere.VigenereController"
+      fx:controller="com.example.UI.AES.AESController"
       spacing="15"
       alignment="CENTER"
       prefWidth="450"
       prefHeight="320"
       style="-fx-padding: 30; -fx-background-color: #f4f4f4;">
 
-    <Label text="Cifrado Vigenère"
+    <Label text="Cifrado AES-128"
            style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
 
     <TextField fx:id="inputText"
-               promptText="Texto plano / Texto cifrado"
+               promptText="Texto plano / Texto cifrado (hex)"
                prefWidth="350"/>
 
     <TextField fx:id="keyField"
-               promptText="Clave"
+               promptText="Clave (hasta 16 caracteres)"
                prefWidth="350"/>
 
     <HBox spacing="10" alignment="CENTER">
-        <Button text="Cifrar con Vigenère"
+        <Button text="Cifrar con AES"
                 onAction="#onEncryptClick"
                 prefWidth="160"
-                style="-fx-background-color: #8e44ad; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold;"/>
         <Button text="Descifrar"
                 onAction="#onDecryptClick"
                 prefWidth="160"
@@ -39,7 +39,8 @@
     <TextField fx:id="outputText"
                promptText="Resultado"
                prefWidth="350"
-               editable="false"/>
+               editable="false"
+               style="-fx-font-family: monospace;"/>
 
     <Label fx:id="errorLabel"
            text=""

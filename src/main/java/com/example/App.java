@@ -9,7 +9,14 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         Router.setStage(stage);
-        Router.goToCesar(); // cambia si quieres otro
+
+        // Abre directamente Vigenere (puedes cambiar luego)
+        //Router.goToPigPen();
+        //Router.goToRailFence();
+        Router.goToAES();
+        //Router.goToVigenere();
+        stage.setTitle("Cifrados");
+        stage.show();
     }
 
     public static void main(String[] args) {

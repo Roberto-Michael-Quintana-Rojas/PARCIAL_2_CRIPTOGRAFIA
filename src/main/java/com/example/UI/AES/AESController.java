@@ -1,11 +1,11 @@
-package com.example.UI.Vigenere;
+package com.example.UI.AES;
 
-import com.example.cipher.Vigenere.VigenereCipher;
+import com.example.cipher.AES.AESCipher;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 
-public class VigenereController {
+public class AESController {
 
     @FXML private TextField inputText;
     @FXML private TextField keyField;
@@ -23,22 +23,26 @@ public class VigenereController {
             return;
         }
 
-        VigenereCipher cipher = new VigenereCipher(key);
+        AESCipher cipher = new AESCipher(key);
         outputText.setText(cipher.encrypt(text));
     }
 
     @FXML
     protected void onDecryptClick() {
         errorLabel.setText("");
-        String text = inputText.getText().trim();  // pega el texto cifrado aquí
-        String key  = keyField.getText().trim();
+        String hex = inputText.getText().trim();  // ← lee desde inputText
+        String key = keyField.getText().trim();
 
-        if (text.isEmpty() || key.isEmpty()) {
+        if (hex.isEmpty() || key.isEmpty()) {
             errorLabel.setText("⚠ Completa todos los campos.");
             return;
         }
 
-        VigenereCipher cipher = new VigenereCipher(key);
-        outputText.setText(cipher.decrypt(text));
+        try {
+            AESCipher cipher = new AESCipher(key);
+            outputText.setText(cipher.decrypt(hex));  // ← muestra en outputText
+        } catch (Exception e) {
+            errorLabel.setText("⚠ Texto cifrado o clave inválidos.");
+        }
     }
 }
