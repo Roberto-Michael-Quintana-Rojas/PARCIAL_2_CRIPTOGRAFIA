@@ -1,6 +1,8 @@
 package com.example.UI.PigPen;
 
 import com.example.cipher.PigPen.PigPenCipher;
+import com.example.router.Router;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Font;
@@ -120,5 +122,10 @@ public class PigPenController {
     clipboard.setContent(content);
 
     showStatus("✅ Texto cifrado (Unicode) copiado al portapapeles", false);
+  }
+
+  @FXML
+  private void goBackToMainMenu() {
+    Router.goToMainMenu();
   }
 }

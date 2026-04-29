@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.UI.PrincipalController"
+      spacing="18"
+      alignment="CENTER"
+      prefWidth="645"
+      prefHeight="520">
+  <padding>
+    <Insets top="25" right="30" bottom="25" left="30"/>
+  </padding>
+  <Label text="Examen Segundo Parcial - Criptografía" 
+             style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+  <Separator/>
+  <Label text="Seleccione un cifrado:" 
+             style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+  <GridPane hgap="18" vgap="14" alignment="CENTER">
+    <Button text="🔑  Cifrado César" 
+                    onAction="#goToCesar" 
+                    prefWidth="270" prefHeight="58"
+                    style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-background-color: #3498db; -fx-text-fill: white;"/>
+    <Button text="🐷  Cifrado PigPen" 
+                    onAction="#goToPigPen" 
+                    prefWidth="270" prefHeight="58"
+                    style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-background-color: #9b59b6; -fx-text-fill: white;"
+                    GridPane.columnIndex="1"/>
+    <Button text="📏  Rail Fence" 
+                    onAction="#goToRailFence" 
+                    prefWidth="270" prefHeight="58"
+                    style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-background-color: #2ecc71; -fx-text-fill: white;"
+                    GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <Button text="🔄  Cifrado Vigenère" 
+                    onAction="#goToVigenere" 
+                    prefWidth="270" prefHeight="58"
+                    style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-background-color: #f39c12; -fx-text-fill: white;"
+                    GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Button text="🔐  Cifrado AES" 
+                    onAction="#goToAES" 
+                    prefWidth="270" prefHeight="58"
+                    style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-background-color: #e74c3c; -fx-text-fill: white;"
+                    GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+  </GridPane>
+  <Separator/>
+  <VBox spacing="6" alignment="CENTER">
+    <Label text="Integrantes del Grupo" 
+                   style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    <HBox spacing="30" alignment="CENTER">
+      <VBox spacing="4" alignment="CENTER_LEFT">
+        <Label text="Caleb Rodrigo Coronado Maqueda" style="-fx-font-size: 13px;"/>
+        <Label text="Alex Adrian Mendez Moreira" style="-fx-font-size: 13px;"/>
+        <Label text="Erika Fernanda Meza Quinteros" style="-fx-font-size: 13px;"/>
+      </VBox>
+      <VBox spacing="4" alignment="CENTER_LEFT">
+        <Label text="Paola Alejandra Cuestas Vidaurre" style="-fx-font-size: 13px;"/>
+        <Label text="Jose Luis Mujica Lugones" style="-fx-font-size: 13px;"/>
+      </VBox>
+    </HBox>
+  </VBox>
+</VBox>

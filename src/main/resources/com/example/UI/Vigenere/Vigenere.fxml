@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
+=======
+>>>>>>> eb967b3 (feat: implementacion de la ventana principal)
 
-<VBox xmlns="http://javafx.com/javafx/11"
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.UI.Vigenere.VigenereController"
       spacing="15"
       alignment="CENTER"
       prefWidth="450"
+<<<<<<< HEAD
       prefHeight="320"
       style="-fx-padding: 30; -fx-background-color: #f4f4f4;">
 
@@ -44,5 +51,43 @@
     <Label fx:id="errorLabel"
            text=""
            style="-fx-text-fill: #e74c3c;"/>
+=======
+      prefHeight="380"
+      style="-fx-padding: 30;">
+
+    <Label text="Cifrado Vigenère" 
+           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <TextField fx:id="inputText" 
+               promptText="Texto plano" 
+               prefWidth="320"/>
+
+    <TextField fx:id="keyField" 
+               promptText="Clave" 
+               prefWidth="320"/>
+
+    <Button text="Cifrar con Vigenère" 
+            onAction="#onEncryptClick" 
+            prefWidth="220"
+            style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="outputText" 
+               promptText="Resultado" 
+               prefWidth="320" 
+               editable="false"/>
+
+    <HBox alignment="CENTER" spacing="10" VBox.vgrow="ALWAYS">
+        <Button text="Menú Principal" 
+                onAction="#goBackToMainMenu"
+                prefWidth="200"
+                prefHeight="45"
+                style="-fx-background-color: #77bafc; 
+                       -fx-text-fill: white; 
+                       -fx-font-size: 14px; 
+                       -fx-font-weight: bold; 
+                       -fx-background-radius: 5; 
+                       -fx-cursor: hand;"/>
+    </HBox>
+>>>>>>> eb967b3 (feat: implementacion de la ventana principal)
 
 </VBox>

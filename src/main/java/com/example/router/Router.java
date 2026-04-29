@@ -58,15 +58,46 @@ public class Router {
     }
 
     public static void goToAES() {
-    try {
-        var url = Router.class.getResource("/com/example/UI/AES/AES.fxml");
-        System.out.println("RUTA: " + url);
-        FXMLLoader loader = new FXMLLoader(url);
-        Scene scene = new Scene(loader.load(), 500, 380);
-        stage.setScene(scene);
-        stage.setTitle("Cifrado AES-128");
-    } catch (Exception e) {
-        e.printStackTrace();
+        try {
+            var url = Router.class.getResource("/com/example/UI/AES/AES.fxml");
+            System.out.println("RUTA: " + url);
+            FXMLLoader loader = new FXMLLoader(url);
+            Scene scene = new Scene(loader.load(), 500, 380);
+            stage.setScene(scene);
+            stage.setTitle("Cifrado AES-128");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-}
+
+    public static void goToMainMenu() {
+        try {
+            var url = Router.class.getResource("/com/example/UI/Principal.fxml");
+            if (url == null) {
+                System.err.println("ERROR: No se encontró MainMenu.fxml");
+                return;
+            }
+            FXMLLoader loader = new FXMLLoader(url);
+            Scene scene = new Scene(loader.load(), 645, 520);
+            stage.setScene(scene);
+            stage.setTitle("Examen Segundo Parcial - Criptografía");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error al cargar MainMenu: " + e.getMessage());
+        }
+    }
+
+    public static void goToRailFence() {
+        try {
+            var url = Router.class.getResource("/com/example/UI/RailFence/RailFence.fxml");
+            System.out.println("RUTA: " + url);
+
+            FXMLLoader loader = new FXMLLoader(url);
+            Scene scene = new Scene(loader.load(), 560, 460);
+            stage.setScene(scene);
+            stage.setTitle("Cifrado Rail Fence");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
