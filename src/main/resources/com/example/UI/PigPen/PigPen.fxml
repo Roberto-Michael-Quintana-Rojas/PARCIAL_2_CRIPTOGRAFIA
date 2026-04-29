@@ -5,87 +5,61 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns="http://javafx.com/javafx/17"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.UI.PigPen.PigPenController"
-      spacing="15"
-      alignment="CENTER"
-      prefWidth="650"
-      prefHeight="550">
-
-    <!-- Padding correcto -->
-    <padding>
-        <Insets top="20" right="25" bottom="20" left="25"/>
-    </padding>
-
-    <!-- Título -->
-    <Label text="🔐 Cifrado Pigpen" 
-           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
-
-    <!-- Descripción breve -->
-    <Label text="Sustitución geométrica • Rejillas y cruces (Fuente: BabelStone Pigpen)"
-           style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
-
-    <Separator/>
-
-    <!-- Área de entrada -->
-    <VBox spacing="8">
-        <Label text="Texto Original:" 
-               style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
-        <TextArea fx:id="inputTextArea" 
-                  prefHeight="130"
-                  promptText="Escribe aquí el texto que quieres cifrar..."/>
-    </VBox>
-
-    <!-- Botones principales -->
-    <HBox spacing="15" alignment="CENTER">
-        <Button fx:id="encryptButton" 
-                text="Cifrar →" 
-                onAction="#encrypt"
-                prefWidth="140"
-                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;"/>
-
-        <Button fx:id="decryptButton" 
-                text="← Descifrar" 
-                onAction="#decrypt"
-                prefWidth="140"
-                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;"/>
-
-        <Button fx:id="clearButton" 
-                text="Limpiar Todo" 
-                onAction="#clearAll"
-                prefWidth="120"
-                style="-fx-background-color: #95a5a6; -fx-font-size: 14px;"/>
-    </HBox>
-
-    <!-- Área de salida -->
-    <VBox spacing="8">
-        <Label text="Resultado:" 
-               style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
-        <TextArea fx:id="outputTextArea" 
-                  prefHeight="150"
-                  editable="false"
-                  promptText="El texto cifrado aparecerá aquí..."/>
-    </VBox>
-
-    <!-- Botones secundarios -->
-    <HBox spacing="15" alignment="CENTER">
-        <Button fx:id="showKeyButton" 
-                text="📋 Ver Clave Pigpen" 
-                onAction="#showKey"
-                prefWidth="170"
-                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-size: 14px;"/>
-
-        <Button text="📋 Copiar Resultado" 
-                onAction="#copyToClipboard"
-                prefWidth="160"
-                style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 14px;"/>
-    </HBox>
-
-    <!-- Barra de estado -->
-    <HBox alignment="CENTER_LEFT" spacing="10">
-        <Label fx:id="statusLabel" 
-               text="✅ Listo - Introduce texto y presiona Cifrar"
-               style="-fx-font-size: 13px; -fx-text-fill: #2c3e50;"/>
-    </HBox>
-
+  xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="com.example.UI.PigPen.PigPenController"
+  spacing="15"
+  alignment="CENTER"
+  prefWidth="650"
+  prefHeight="550">
+  <padding>
+    <Insets top="20" right="25" bottom="20" left="25"/>
+  </padding>
+  <Label text="🔐 Cifrado Pigpen" 
+    style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+  <Label text="Sustitución geométrica • Rejillas y cruces (Fuente: BabelStone Pigpen)"
+    style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+  <Separator/>
+  <VBox spacing="8">
+    <Label text="Texto Original:" 
+      style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+    <TextArea fx:id="inputTextArea" 
+      prefHeight="130"
+      promptText="Escribe aquí el texto que quieres cifrar..."/>
+  </VBox>
+  <HBox spacing="15" alignment="CENTER">
+    <Button fx:id="encryptButton" 
+      text="Cifrar →" 
+      onAction="#encrypt"
+      prefWidth="140"
+      style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;"/>
+    <Button fx:id="decryptButton" 
+      text="← Descifrar" 
+      onAction="#decrypt"
+      prefWidth="140"
+      style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;"/>
+    <Button fx:id="clearButton" 
+      text="Limpiar Todo" 
+      onAction="#clearAll"
+      prefWidth="120"
+      style="-fx-background-color: #95a5a6; -fx-font-size: 14px;"/>
+  </HBox>
+  <VBox spacing="8">
+    <Label text="Resultado:" 
+      style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+    <TextArea fx:id="outputTextArea" 
+      prefHeight="150"
+      editable="false"
+      promptText="El texto cifrado aparecerá aquí..."/>
+  </VBox>
+  <HBox spacing="15" alignment="CENTER">
+    <Button text="Copiar Cifrado" 
+      onAction="#copyCipheredText"
+      prefWidth="140"
+      style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-size: 14px;"/>
+  </HBox>
+  <HBox alignment="CENTER_LEFT" spacing="10">
+    <Label fx:id="statusLabel" 
+      text="✅ Listo - Introduce texto y presiona Cifrar"
+      style="-fx-font-size: 13px; -fx-text-fill: #2c3e50;"/>
+  </HBox>
 </VBox>
