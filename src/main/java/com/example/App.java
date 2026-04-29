@@ -8,17 +8,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-
         Router.setStage(stage);
-<<<<<<< HEAD
-        Router.goToCesar();
-=======
-
-        Router.goToCesar();
-
-        stage.setTitle("Cifrado Cesar");
-        stage.show();
->>>>>>> 6e5b1c2 (feat: implementar cifrado cesar)
+        Router.goToCesar(); // cambia si quieres otro
     }
 
     public static void main(String[] args) {
