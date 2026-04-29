@@ -11,7 +11,7 @@ public class App extends Application {
         Router.setStage(stage);
 
         // Abre directamente Vigenere (puedes cambiar luego)
-
+        //feeedback: funciona correctamente el menu principal
         Router.goToMainMenu();
 
         stage.setTitle("Cifrados");
